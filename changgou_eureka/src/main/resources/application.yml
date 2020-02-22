@@ -1,0 +1,17 @@
+server:
+  port: 6868
+    # 下面这个参数是为解决问题而新增的
+  tomcat:
+    max-http-header-size: 8192
+eureka:
+  client:
+    register-with-eureka: false #是否将自己注册到eureka中
+    fetch-registry: false #是否从eureka中获取信息
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+spring:
+  application:
+    name: changgou-eureka
